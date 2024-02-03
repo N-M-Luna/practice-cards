@@ -25,6 +25,7 @@
 .Title {
   height: 30vmin;
   pointer-events: none;
+  text-align: center;
 }
 .Start-button {
   background-color: #61dafb;
@@ -73,11 +74,13 @@
 .Flash-card {
   color:  #282c34;
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 50px;
   text-align: center;
 }
 .Action-buttons {
   display: inline-block;
+  margin-top: 80px;
   text-align: center;
   text-decoration: none;
 }

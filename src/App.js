@@ -46,7 +46,7 @@ function HomeScreen({startPractice}) {
     <div>
         <p className="Top-bar-home" > <a href='https://www.instagram.com/alianza.dance/'>Alianza Dance Co.</a> Salsa Curriculum </p>
         <header className="Start-screen">
-          <h1 className="Title"> Practice Cards </h1>
+          <h1 className="Title"> Footwork <br/> Practice Cards </h1>
           {startPracticeButtons}
         </header>
       </div>
@@ -131,7 +131,20 @@ function CompletePracticeButton({completePractice}) {
 
 //Helpers
 function shuffleThisArray (myArray) {
-  //TODO
+  let m = myArray.length, t, i;
+
+  // While there remain elements to shuffle...
+  while (m) {
+
+    // Pick a remaining element...
+    i = Math.floor(Math.random() * m--);
+
+    // And swap it with the current element.
+    t = myArray[m];
+    myArray[m] = myArray[i];
+    myArray[i] = t;
+  }
+
   return myArray
 }
 
