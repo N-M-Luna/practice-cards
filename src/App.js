@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <p className="User-bar" > Username - 99 practices this week  </p>
+      <header className="Start-screen">
+        <h1 className="Title"> Practice Cards </h1>
+        <StartButton level="1"/>
       </header>
     </div>
   );
+}
+
+//Home screen has a top bar with user name and data
+function StartButton({level}) {
+  return (
+    <button className="Start-button"onClick={startPractice}>
+      Start Practice - month no. {level}
+    </button>
+  );
+}
+
+function startPractice() {
+  alert('Starting practice session!');
 }
 
 export default App;
