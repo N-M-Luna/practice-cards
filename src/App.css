@@ -10,22 +10,29 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.User-bar {
+.Top-bar-home {
   background-color: #282c34;
   color: white;
   margin: 0;
   padding: 5px;
+}
+.Top-bar-home a {
+  color: #61dafb;
+}
+.Top-bar-home a:hover {
+  color: white;
 }
 .Title {
   height: 30vmin;
   pointer-events: none;
 }
 .Start-button {
-  background-color:  #61dafb;
+  background-color: #61dafb;
   border: none;
   border-radius: 8px;
   color: #282c34;
   font-size: 16px;
+  margin-bottom: 5px;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -34,6 +41,18 @@
   background-color: white;
   color: #282c34;
 }
+.Disable-start-button {
+  background-color: gray;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 5px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  cursor: not-allowed;
+}
 
 /* Practice screen */
 .Practice-screen {
@@ -41,30 +60,56 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #282c34;
 }
-.End-button {
-  background-color:  #282c34;
-  border: none;
-  border-radius: 50%;
-  color: white;
-  font-size: 16px;
-  padding: 15px 32px;
+.Top-bar-practice {
+  background-color: #61dafb;
+  color: #282c34;
+  margin: 0;
+  padding: 5px;
+}
+.Flash-card {
+  color:  #282c34;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.Action-buttons {
+  display: inline-block;
   text-align: center;
   text-decoration: none;
 }
+.Action-button {
+  background-color:  #282c34;
+  border: 2px solid #282c34;
+  color: white;
+  margin: 5px;
+  padding: 15px 32px;
+}
+.Action-button:hover {
+  color: #61dafb;
+  /* background-color: #61dafb;
+  border-color: #282c34;
+  color: #282c34; */
+}
+.Left-action-button {
+  border-radius: 10px 0px 0px 10px;
+}
+.Right-action-button {
+  border-radius: 0px 10px 10px 0px;
+}
+.Middle-action-button {
+  cursor: not-allowed;
+}
 
 /* Extras */
-
 @media (prefers-reduced-motion: no-preference) {
   .spinny-elem {
     animation: spinny-elem-spin infinite 20s linear;
   }
 }
-
 @keyframes spinny-elem-spin {
   from {
     transform: rotate(0deg);
