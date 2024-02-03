@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/practice-cards/static/css/main.de449786.css",
+    "main.js": "/practice-cards/static/js/main.da872784.js",
+    "static/js/592.502e70c7.chunk.js": "/practice-cards/static/js/592.502e70c7.chunk.js",
+    "index.html": "/practice-cards/index.html",
+    "main.de449786.css.map": "/practice-cards/static/css/main.de449786.css.map",
+    "main.da872784.js.map": "/practice-cards/static/js/main.da872784.js.map",
+    "592.502e70c7.chunk.js.map": "/practice-cards/static/js/592.502e70c7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.de449786.css",
+    "static/js/main.da872784.js"
+  ]
+}
