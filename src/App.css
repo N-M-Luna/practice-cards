@@ -73,10 +73,12 @@
 }
 .Flash-card {
   color:  #282c34;
-  font-size: 3rem;
-  margin-bottom: 10px;
-  padding-bottom: 50px;
+  height: 50vh;
+  margin-bottom: 50px;
   text-align: center;
+}
+.Feetsies-Diagram {
+  height: 25vh;
 }
 .Action-buttons {
   display: inline-block;
@@ -103,8 +105,8 @@
 .Right-action-button {
   border-radius: 0px 10px 10px 0px;
 }
-.Middle-action-button {
-  cursor: not-allowed;
+.Active-help-button {
+  color: #61dafb;
 }
 
 /* Extras */

@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faArrowRight, faQuestion, faCheck } from '@fortawesome/free-solid-svg-icons'
+import notFound from './notFound.png'
 
 const steps = require('../src/FlashCards')
 const iconSize = 'fa-3x'
@@ -72,19 +73,24 @@ function StartButton({level, startPractice}) {
 //Practice screen has: a flash card, counter, back button, help button, and either a next button or a endPractice button
 function PracticeScreen({practiceSteps, endPractice, completePractice, level}) {
   const [stepCounter, setStepCounter] = useState(0)
+  const [feetDiagramIsDisplayed, setFeetDiagramIsDisplayed] = useState(false)
 
   function goToNextStep() {
     setStepCounter(stepCounter+1)
+    setFeetDiagramIsDisplayed(false)
+  }
+  function displayfeetDiagram() {
+    setFeetDiagramIsDisplayed(!feetDiagramIsDisplayed)
   }
 
   return (
     <div>
         <p className="Top-bar-practice" > Practicing steps from level {level}</p>
         <header className="Practice-screen">
-          <FlashCard displayName={practiceSteps[stepCounter]} />
+          <FlashCard currentStep={practiceSteps[stepCounter]} feetDiagramIsDisplayed={feetDiagramIsDisplayed} />
           <div className="Action-buttons">
             <EndButton endPractice={endPractice} />
-            <HelpButton />
+            <HelpButton displayfeetDiagram={displayfeetDiagram} feetDiagramIsDisplayed={feetDiagramIsDisplayed}/>
             {stepCounter < practiceSteps.length-1 ?
               <NextStepButton goToNextStep={goToNextStep}  />
               : <CompletePracticeButton completePractice={completePractice} />}
@@ -93,13 +99,19 @@ function PracticeScreen({practiceSteps, endPractice, completePractice, level}) {
       </div>
   )
 }
-function FlashCard({displayName}) {
+function FlashCard({ currentStep, feetDiagramIsDisplayed }) {
+
+  let diagram = !feetDiagramIsDisplayed ? <div></div>
+    : <img src={notFound} className="Feetsies-Diagram" alt="[Artist is still working on this piece.]" />
+
   return (
     <div className="Flash-card">
-      <p>{displayName}</p>
+      <h1>{currentStep.name}</h1>
+      {diagram}
     </div>
   )
 }
+
 function EndButton({endPractice}) {
   return (
     <button className="Action-button Left-action-button" onClick={endPractice}>
@@ -107,9 +119,11 @@ function EndButton({endPractice}) {
     </button>
   );
 }
-function HelpButton() {
+function HelpButton({displayfeetDiagram, feetDiagramIsDisplayed}) {
+  let classesForHelpBtn = "Action-button Middle-action-button"
+  if (feetDiagramIsDisplayed) { classesForHelpBtn += " Active-help-button" }
   return (
-    <button className="Action-button Middle-action-button">
+    <button className={classesForHelpBtn} onClick={displayfeetDiagram}>
       <FontAwesomeIcon className={iconSize} icon={faQuestion} />
     </button>
   )
